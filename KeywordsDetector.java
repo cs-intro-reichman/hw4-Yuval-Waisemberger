@@ -28,18 +28,18 @@ public class KeywordsDetector {
         boolean isKeyword = false;
         for (int i = 0; i < sentences.length; i++) {
             // Initiallizing new string to be a copy of sentences[i] item,
-            // in order not to change the origin array values.
+            // in order not to change the original array values.
             String line = sentences[i].toLowerCase();
             for (int j = 0; j < keywords.length; j++) {
                 // Initiallizing new string to be a copy of keywords[j] item,
-                // in order not to change the origin array values.
+                // in order not to change the original array values.
                 String keywordItem = keywords[j].toLowerCase();
                 if (line.indexOf(keywordItem) != -1) {
                     isKeyword = true;
                 }
             }
             if (isKeyword) {
-                System.out.println(line);
+                System.out.println(sentences[i]);
                 isKeyword = false;
             }
         }
