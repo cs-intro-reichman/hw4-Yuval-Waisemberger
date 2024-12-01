@@ -27,8 +27,8 @@ public class Primes {
                 countPrime++;
             }
         }
-        // Didn't know if % is soppused to be an int or double. Chose the safest case.
-        double percent = (countPrime / (double)N) * 100;
+        // Calculating int percent.
+        int percent = (int)((countPrime / (double)N) * 100);
         System.out.println("There are " + countPrime + " primes between 2 and " + N + " (" + percent +"% are primes)");
     }
 }
