@@ -21,6 +21,27 @@ public class KeywordsDetector {
     // Iterates through all the sentences.
     // If a sentence contains one or more of the kewords, prints it.
     public static void detectAndPrint(String[] sentences, String[] keywords) {
-        // Replace this comment with your code
+        // edge case- one or more array is empty
+        if (sentences.length == 0 || keywords.length == 0) {
+            System.out.println("ERROR");
+        }
+        boolean isKeyword = false;
+        for (int i = 0; i < sentences.length; i++) {
+            // Initiallizing new string to be a copy of sentences[i] item,
+            // in order not to change the origin array values.
+            String line = sentences[i].toLowerCase();
+            for (int j = 0; j < keywords.length; j++) {
+                // Initiallizing new string to be a copy of keywords[j] item,
+                // in order not to change the origin array values.
+                String keywordItem = keywords[j].toLowerCase();
+                if (line.indexOf(keywordItem) != -1) {
+                    isKeyword = true;
+                }
+            }
+            if (isKeyword) {
+                System.out.println(line);
+                isKeyword = false;
+            }
+        }
     }
 }
